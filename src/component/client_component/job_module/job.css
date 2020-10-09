@@ -1,0 +1,22 @@
+.form{
+    padding-left: 2rem;
+}
+textarea{
+    display: block;
+}
+.m{
+    margin-left: 20%;
+}
+
+#job1{
+    width: 40%;
+    height: 40rem;
+}
+#job2{
+    width: 60%;
+    height: 40rem;
+}
+#job0{
+    margin-top: 0.5rem;
+    display:flex;
+}
