@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import { setSelectJobData } from "../../../redux/client_job/clientJob_action";
+
 
 import JobBar from "../../job_bar/job_bar";
 import JobDetail from "../job_module/job_detail";
@@ -15,7 +15,7 @@ const Job=({userData,selectJobData})=>{
                 {userData.map((data)=>(<JobBar name={data.name} key={data._id} _id={data} />))}
             </div>
             <div id="job2">
-                {setSelectJobData?<JobDetail/>:null}
+                {selectJobData?<JobDetail/>:null}
             </div>
         </div>
     );

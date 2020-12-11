@@ -8,6 +8,7 @@ import Jumbotron from '../component/jumbotron/jumbotron';
 import Navs from '../component/client_component/nav/nav'
 import Footer from "../component/footer/footer";
 import Spinner from "../component/spinner/spinner";
+import Logout from "../component/logout/logout";
 
 class Client extends React.Component{
     constructor(props){
@@ -29,7 +30,9 @@ class Client extends React.Component{
         
         return(
             <div>
-                <Navbar/> <Jumbotron>
+                <Navbar>
+                    <Logout/>
+                    </Navbar> <Jumbotron>
                 {this.state.isLoading?<Spinner/>:
                 <div>
                     <Navs/>

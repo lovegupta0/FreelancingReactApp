@@ -3,9 +3,9 @@ import Form from 'react-bootstrap/Form';
 import {Button} from "react-bootstrap";
 import axios from 'axios';
 
-import Navbar from '../component/navbar/navbar';
-import Jumbotron from '../component/jumbotron/jumbotron';
-import Login from "../component/login/login";
+import Navbar from '../../navbar/navbar';
+import Jumbotron from '../../jumbotron/jumbotron';
+import Login from "../../login/login";
 
 
 import './signup.css';

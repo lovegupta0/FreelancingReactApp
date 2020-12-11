@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SpinnerOverlay=styled.div`
+padding-top:10rem;
 height:60vh;
 width:100%;
 display:flex;

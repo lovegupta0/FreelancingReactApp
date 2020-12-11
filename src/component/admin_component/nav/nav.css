@@ -1,0 +1,23 @@
+.box0{
+    display: flex;
+}
+.box1{
+    width: 50%;
+    height: 2rem;
+    background-color:#F0F6F6;
+    border: 1px solid !important;
+    border-radius: 8px;
+}
+
+.h5{
+    margin-left: 30%;
+    margin-top: 2px;
+}
+h5:hover{
+    cursor: pointer;
+}
+.h51{
+    margin-left: 15%;
+    margin-top: 2px;
+}
+

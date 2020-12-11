@@ -1,5 +1,9 @@
 import React from "react";
 
+import Job from "../job_module/job";
+import OngoingJob from "../ongoing_job_module/ongingJob";
+import Message from "../../client_component/message_module/message";
+import Report from "../../client_component/report_module/report";
 
 import "./nav.css";
 
@@ -54,10 +58,10 @@ const Navs=(props)=>{
           </div>
         </div>
         <div>
-        {Nav1?null:null}
-        {Nav2?null:null}
-        {Nav3?null:null}
-        {Nav4?null:null}
+        {Nav1?<Job/>:null}
+        {Nav2?<OngoingJob/>:null}
+        {Nav3?<Message/>:null}
+        {Nav4?<Report/>:null}
         </div>
       </div>
     )

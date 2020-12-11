@@ -1,16 +1,37 @@
 
 #job3{
     width: 40%;
-    background-color: gray;
-    height: 40rem;
-    padding-left: 1rem;
+    min-height: 35rem;
 }
 #job4{
     width: 60%;
-    background-color: green;
-    height: 40rem;
+    min-height: 35rem;
+    background-color: aliceblue;
+    border: 0.5px solid black;
+    padding: 5px;
 }
 .job0{
     margin-top: 1rem;
     display:flex;
+}
+.form{
+    padding-left: 2rem;
+}
+textarea{
+    display: block;
+}
+.m{
+    margin-left: 20%;
+}
+
+
+#job0{
+    display:flex;
+}
+.h511{
+    margin-left: 0 !important;
+}
+
+.box0{
+    display: flex;
 }

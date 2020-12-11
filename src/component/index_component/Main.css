@@ -1,0 +1,57 @@
+.background{
+    background-image: url("./Images/freelancing.jpg");
+    height: 700px;
+    width: 1347px;
+
+}
+.main .main__desc{
+    align-items: center;
+   
+}
+
+.main__action{
+    align-items: center;
+}
+.para{
+    display: inline-block;
+	font-size: 40px;
+	font-weight: 700;
+	padding: 40px;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+.para1{
+    font-size: 32px;
+	color: white;
+    padding: 3px;
+    margin-left:100px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.main__action {
+    margin-left:140px;
+    margin-top: 20px;
+}
+.submit {
+	border: 1px solid #fff;
+	padding: 0 15px;
+	height: 48px;
+	font-size: 15px;
+	color: #1a1a52;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: open sans;
+}
+.submit1 {
+    border: 1px solid#fff;
+	padding: 0 15px;
+	height: 48px;
+	font-size: 15px;
+	color: #1a1a52;
+	font-weight: 600;
+	text-transform: uppercase;
+    font-family: open sans;
+    margin-left: 30px;
+
+}

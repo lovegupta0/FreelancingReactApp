@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 
 import CreateJob from '../job_module/create_job';
 import Job from '../job_module/job';
-import JobDetail from "../job_module/job_detail";
+import Message from "../message_module/message";
+import Report from "../report_module/report";
 
 import "./nav.css";
 
@@ -60,8 +61,8 @@ const Navs=({})=>{
         <div>
         {Nav1?<Job/>:null}
         {Nav2?<CreateJob/>:null}
-        {Nav3?null:null}
-        {Nav4?null:null}
+        {Nav3?<Message />:null}
+        {Nav4?<Report/>:null}
         </div>
       </div>
     )

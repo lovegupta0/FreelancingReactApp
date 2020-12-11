@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState} from 'react'
 import {Button} from "react-bootstrap";
 import {useHistory} from "react-router-dom"
 import axios from "axios";
@@ -7,14 +7,17 @@ import Modal from 'react-bootstrap/Modal';
 import {connect} from "react-redux";
 
 import {setCurrentUser} from "../../redux/user/user_action";
+import DevLog from "./devlog"
+import logo from './Images/logo.png'
+import './Navbar.css'
 
-
-function Login({setCurrentUser}){
+ function NavbarItem({setCurrentUser}){
     let history=useHistory();
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+ 
 
     const [status,setstatus]=useState("");
     
@@ -32,9 +35,6 @@ function Login({setCurrentUser}){
             }  
         });
     }
-
-   
-
     function handleSubmit(event){
         
         axios.post("/api/clientLogin",login,{crossDomain: true})
@@ -42,13 +42,7 @@ function Login({setCurrentUser}){
             if(response.data.status==="sucess"){
                 setstatus("is-valid");
                 setCurrentUser(response.data);
-                if(login.username==="admin@admin.com"){
-                    history.push("/admin");
-                }
-                else{
-                    history.push("/client");
-                }
-                
+                history.push("/client");
 
             }
             else{
@@ -61,42 +55,58 @@ function Login({setCurrentUser}){
         event.preventDefault();
         
     }
+    
+
 
     return(
-        <div>
-             <Button variant="outline-primary" onClick={handleShow}>
-      Login
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
+        <div className="navbar">
+            <div className="navbar__header">
+               <img src={logo} alt="Logo" title="Freelances" />        </div>
+         <ul className="navbar__menu">
+             <li className="navbar__item"><a href="https://www.google.com/">How It Works </a></li>
+             <li className="navbar__item"><a href="https://www.google.com/">Browse Jobs </a></li>
+             <div>
+             
+             <DevLog/>
+             </div>
+             <div>
+             <button className="navbar__item1" onClick={handleShow}>
+                 Login <br/>
+                 <small>As Client</small>
+             </button>
+             <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Freelancing</Modal.Title>
         </Modal.Header>
         
-        <Modal.Body className='center' >
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formBasicEmail" className="mb-0 mt">
+        <Modal.Body  >
+            <div className='text-center' style={{padding:"0 15% 0 15%"}}>
+            <Form onSubmit={handleSubmit} className='text-center ' >
+                <Form.Group controlId="formBasicEmail" className="mb-1 mt text-center ">
                     
-                    <Form.Control type="email" className={status+" w-50"} name="username" onChange={handleChange} placeholder="Username" required/>
+                    <Form.Control type="email" className={status} name="username" onChange={handleChange} placeholder="Username" required/>
                 </Form.Group>
 
-                <Form.Group controlId="formBasicPassword" className="mb-0">
-                    <Form.Control type="password" className={status+" w-50"} name="password" onChange={handleChange} placeholder="Password" required />
+                <Form.Group controlId="formBasicPassword" className="mb-0 text-center">
+                    <Form.Control type="password" className={status} name="password" onChange={handleChange} placeholder="Password" required />
                 </Form.Group>
-                <Button variant="outline-primary" type="submit">
+                <Button variant="outline-primary" className="mt-2" type="submit">
                     Login
                 </Button>
             </Form>
+            </div>
         </Modal.Body>
         <Modal.Footer>
         <div >
-                <small>&copy; Copyright Freelancing Service</small>
+                <small>&copy; Copyright Freelancing</small>
                
               </div>
         </Modal.Footer>
       </Modal>
-        </div>
-    );
+             </div>
+         </ul>
+         </div>
+    )
 }
 
 const mapDispatchToProps=(dispatch)=>({
@@ -106,5 +116,4 @@ const mapDispatchToProps=(dispatch)=>({
 export default connect(
     null,
     mapDispatchToProps
-)(Login);
-
+)(NavbarItem);
